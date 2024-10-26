@@ -1,0 +1,17 @@
+h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8rem;
+    font-size: 4em;
+    color: white;
+}
+
+.grid__container{
+    display: flex;
+    grid-template-columns: 50% 50%;
+}
+
+.grid__item{
+    background-color: white;
+}

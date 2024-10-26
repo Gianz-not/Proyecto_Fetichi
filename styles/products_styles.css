@@ -1,0 +1,88 @@
+/* CONTENEDOR PRINCIPAL*/
+
+.products__container{
+    /*padding: 4rem;*/
+    display: flex;
+    flex-wrap: wrap;    
+    padding-top: 6rem;
+    margin: 0 10%;
+}
+
+/* ESTILOS A LA CARTA*/
+.card{
+    margin: 2rem 2.5%;
+    width: 20rem;
+    height: 400px;
+    background-color: rgb(226, 143, 165);;
+    border-radius: 10%;
+    border: 3px solid rgb(134, 221, 194);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* TITULO CARD*/
+
+.titulo__card{
+    margin: 5px;
+}
+
+
+/* PRECIO CARD*/
+.precio__card{
+    margin: 10px 0 0 0;
+}
+
+/* ESTILOS AL BOTON COMPRAR*/
+
+.card__btn button {
+    padding: 10px 20px;
+    /* Tamaño del botón */
+    margin: 10px 0;
+    background-color: rgb(134, 221, 194);
+    /* Color de fondo */
+    color: white;
+    /* Color del texto */
+    border: none;
+    /* Sin borde */
+    border-radius: 20px;
+    /* Borde redondeado */
+    font-size: 1rem;
+    /* Tamaño de la fuente */
+    cursor: pointer;
+    /* Cambia el cursor cuando se pasa por encima */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    /* Transición suave */
+}
+
+.card__btn button:hover {
+    background-color: rgba(134, 221, 194, 0.8);
+    /* Cambia el color al pasar el cursor */
+    transform: scale(1.05);
+    /* Aumenta el tamaño ligeramente */
+}
+
+
+.img__product{
+    width: 300px;
+        /* El ancho deseado */
+        height: 150px;
+        /* La altura deseada */
+        overflow: hidden;
+        /* Oculta cualquier parte de la imagen que se salga */
+        position: relative;
+        border-radius: 10%;
+
+}
+
+.img__product img{
+        z-index: 1;
+        width: 100%; /* Hace que la imagen ocupe todo el ancho del contenedor */
+        height: auto; /* Ajusta la altura proporcionalmente */
+        position: absolute;
+        top: 0;
+        left: 0;
+
+}

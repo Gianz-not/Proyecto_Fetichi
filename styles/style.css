@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;/* */
+    box-sizing: border-box; /* para que ocupe el tamaño real que corresponde*/
+    text-decoration: none; /*le saca lo subrayado*/
+    list-style: none; /* le saca los puntos a la lista*/
+    scroll-behavior: smooth;
+    font-family: "Agdasima", sans-serif; /* especifica la fuente del texto*/
+}
+
+a {
+    color: rgb(102, 102, 102);
+}
+
+header {
+    background-color: rgb(221, 222, 215);
+    position: fixed; /* hace que la barra de navegacion este permanentemente visible aunque scrollees*/
+    z-index: 999;
+    width: 100%;
+}
+
+.navbar {
+    margin: 0 100px;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2em;
+}
+
+.nologo {
+    padding: 27px 90px;
+}
+
+.nologo:hover {
+    background-color: rgb(201, 190, 190);
+    border-bottom: 2px solid rgb(94, 94, 94);
+}
+
+
+.logo {
+    height: 10vh;
+}
+
+main{
+    background-image: url(../img/fondo.jpg);
+    height: auto;
+}
+
+.main__container{
+    background-color: rgba(60, 60, 91, 0.4);
+    height: auto;
+}
+
+.bienvenida{
+    text-align: center;
+    font-size: 4rem;
+    color: white;
+    padding: 150px;
+    margin-bottom: -100px;
+}
+
+.video-presentacion{
+    display: flex;
+    justify-content: center;
+}
+
+.video-presentacion iframe{
+    border-radius: 10px;
+}
+
+.texto__container{
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.btn__container{
+    display: flex; /* le permite al item ser flexible y moverse */
+    justify-content: center; /* alinea el elemento de manera vertical*/
+    align-items: center; /* alinea el elemento de manera horizontal*/
+    margin: 50px 150px; /* le pone un margen invisible, haciendo que se mueva del lugar*/
+}
+
+.more__btn{
+    padding: 20px 50px; /* establece el área de relleno en los cuatro lados de un elemento a la vez */
+    margin: -25px -25px;
+    border-radius: 50px;/* le pone radio al borde, haciendo al boton mas circular*/
+    background-color: rgb(226, 143, 165);/* le pone un fondo de color rosa al boton*/
+    border: 3px solid rgb(134, 221, 194);/* le pone un borde de 3 px solido de color celeste al boton*/
+    font-size: 2rem; /* incrementa el tamaño del texto*/
+    cursor: pointer; /* al apuntar el boton cambia el cursor*/
+    color: rgb(134, 221, 194); /* cambia el color del texto*/
+}
+
+.more__btn:hover{
+    scale: 1.2; /**/
+    transition: 0.30s;
+    background-color: rgb(229, 177, 191);/**/
+
+}
+
+.map{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+.map iframe{
+    border-radius: 10px;
+}
+
+.footer__container{
+    background-color: rgb(134, 221, 194);
+    border: 5px groove rgb(226, 143, 165);
+    display: flex;
+    padding: 10px 20px;
+}
+
+.icons__container{
+    margin-left: 900px;
+}
+.icons{
+    height: 20px;
+}
+
+.btn__volver{
+    margin: 50px 150px;
+}
+
+.img__productos{
+    height: 150px;
+}
+
+/*CARDS*/
