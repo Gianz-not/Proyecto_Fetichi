@@ -2,7 +2,7 @@
 
 *{
     padding: 0;
-    margin: 0;/* */
+    margin: 0;
     box-sizing: border-box; /* para que ocupe el tamaño real que corresponde*/
     text-decoration: none; /*le saca lo subrayado*/
     list-style: none; /* le saca los puntos a la lista*/
@@ -10,15 +10,15 @@
     font-family: "Agdasima", sans-serif; /* especifica la fuente del texto*/
 }
 
-a {
-    color: rgb(102, 102, 102);
-}
 
+/*BARRA DE NAVEGACIÓN*/
 header {
     background-color: rgb(221, 222, 215);
-    position: fixed; /* hace que la barra de navegacion este permanentemente visible aunque scrollees*/
-    z-index: 999;
     width: 100%;
+}
+
+a {
+    color: rgb(102, 102, 102);
 }
 
 .navbar {
@@ -46,14 +46,14 @@ header {
     height: 10vh;
 }
 
+
+
 main{
     background-image: url(../img/fondo.jpg);
-    height: auto;
 }
 
 .main__container{
     background-color: rgba(60, 60, 91, 0.4);
-    height: auto;
 }
 
 .bienvenida{
@@ -115,6 +115,7 @@ main{
     border-radius: 10px;
 }
 
+
 .footer__container{
     background-color: rgb(134, 221, 194);
     border: 5px groove rgb(226, 143, 165);
@@ -136,5 +137,3 @@ main{
 .img__productos{
     height: 150px;
 }
-
-/*CARDS*/

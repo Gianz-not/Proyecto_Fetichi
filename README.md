@@ -1,1 +1,1 @@
-vender productos
+La página "Helados Fetichi" es una tienda en línea dedicada a la venta de helados, ofreciendo una experiencia atractiva para que los usuarios conozcan los productos disponibles, lean reseñas de otros clientes y realicen compras. El objetivo principal es promocionar y vender una variedad de sabores de helados, resaltando su calidad y la satisfacción de los clientes.
