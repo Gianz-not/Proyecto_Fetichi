@@ -13,47 +13,45 @@
 
 /*BARRA DE NAVEGACIÓN*/
 header {
-    background-color: rgb(221, 222, 215);
-    width: 100%;
-}
-
-a {
-    color: rgb(102, 102, 102);
-}
-
-.navbar {
-    margin: 0 100px;
-}
-
-.navbar ul {
     display: flex;
     justify-content: space-between;
+    background-color: rgb(221, 222, 215);
+    min-height: 70px;
     align-items: center;
-    font-size: 2em;
+    padding: 0 1%;
 }
 
-.nologo {
-    padding: 27px 90px;
+a{
+    text-decoration: none;
+    color: black;
 }
 
-.nologo:hover {
-    background-color: rgb(201, 190, 190);
-    border-bottom: 2px solid rgb(94, 94, 94);
-}
-
-
-.logo {
-    height: 10vh;
+.logo{
+    display: flex;
+    align-items: center;
 }
 
 
+.logo img{
+    height: 50px;
+}
 
-main{
+.nav-bar{
+    display: flex;
+    font-weight: 600;
+}
+
+.nav-link:hover{
+    color: white;
+}
+
+.nav-link{
+    padding: 0 20px;
+}
+
+body{
     background-image: url(../img/fondo.jpg);
-}
-
-.main__container{
-    background-color: rgba(60, 60, 91, 0.4);
+    backdrop-filter: brightness(70%);
 }
 
 .bienvenida{
@@ -88,7 +86,6 @@ main{
 
 .more__btn{
     padding: 20px 50px; /* establece el área de relleno en los cuatro lados de un elemento a la vez */
-    margin: -25px -25px;
     border-radius: 50px;/* le pone radio al borde, haciendo al boton mas circular*/
     background-color: rgb(226, 143, 165);/* le pone un fondo de color rosa al boton*/
     border: 3px solid rgb(134, 221, 194);/* le pone un borde de 3 px solido de color celeste al boton*/
@@ -108,20 +105,22 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 10px;
+    margin-bottom: 5%;
 }
 
 .map iframe{
     border-radius: 10px;
 }
 
-
-.footer__container{
+.pie-de-pagina{
+    height: 4rem;
+    align-items: center;
     background-color: rgb(134, 221, 194);
     border: 5px groove rgb(226, 143, 165);
     display: flex;
-    padding: 10px 20px;
+    justify-content: space-between;
 }
+
 
 .icons__container{
     margin-left: 900px;
@@ -136,4 +135,70 @@ main{
 
 .img__productos{
     height: 150px;
+}
+
+@media (max-width:700px){
+
+    header{
+        flex-direction: column;
+    }
+
+    nav{
+        padding: 10px 0;
+    } 
+    .nav-bar{
+        flex-direction: column;
+    }
+    
+}
+
+/* reseñas estilo*/
+
+/* Título principal */
+.titulo {
+    text-align: center;
+    font-size: 4em;
+    color: #ff69b4;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.grid__container {
+    width: 800px;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-gap: 10px;
+    margin: 0 auto;
+    /* Centra el contenedor horizontalmente */
+}
+
+
+.grid__item {
+    border: 2px solid aqua;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #ff69b4;
+}
+.grid__item__img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.grid__item__img img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .grid__container {
+        width: 100%;
+        /* Ocupa todo el ancho de la pantalla */
+        grid-template-columns: 1fr;
+        /* Cambia a una columna en pantallas pequeñas */
+        padding: 5px;
+    }
+
+
+
 }

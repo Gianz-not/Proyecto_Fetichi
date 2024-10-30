@@ -1,18 +1,21 @@
-.contact__container{
+.contact__container {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
+    /* Agrega un poco de espacio en los bordes */
 }
 
-.info__container{
+.info__container {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    flex-direction: column;
+    /* Cambia a columna en pantallas pequeñas */
 }
 
-.contact__title{
+.contact__title {
     margin: 10px 0;
     font-size: 2rem;
     display: flex;
@@ -20,46 +23,73 @@
     justify-content: center;
 }
 
-.formulario{
+.formulario {
     border-radius: 7px;
-    width: 80%;
-    height: 46%;
+    width: 100%;
+    /* Cambia a 100% para ocupar todo el ancho disponible */
+    max-width: 400px;
+    /* Limita el ancho máximo */
+    height: auto;
+    /* Cambia a auto para ajustarse al contenido */
     background-color: rgb(250, 174, 199);
+    padding: 20px;
+    /* Agrega un poco de espacio interno */
 }
-.nombre-email{
+
+.nombre-email {
     display: flex;
     flex-direction: column;
 }
-.nombre-email input{
-    margin: 30px 0;
+
+.nombre-email input {
+    margin:5px;
+    /* Reduce el margen para que sea más compacto */
 }
 
-.info__container *{
+.info__container * {
     width: 100%;
     padding: 10px;
     margin: 5px 0;
 }
 
-.msj{
-    height: 140px;
-    margin-right: 10px;
+.info__container .msj{
+    height: 100px;
 }
 
-button{
-    width: 98%;
-    margin: 0 1%;
+button {
+    width: 100%;
+    /* Cambia a 100% para ocupar todo el ancho del formulario */
     padding: 10px;
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
     cursor: pointer;
+    border: none;
+    /* Elimina el borde por defecto del botón */
 }
 
-button:hover{
-    background-color:rgba(255, 255, 255, 0.527);
+button:hover {
+    background-color: rgba(255, 255, 255, 0.527);
 }
 
-input{
+input {
     border-radius: 10px;
     border: none;
 }
 
+/* Media Query para pantallas pequeñas */
+@media (max-width: 600px) {
+    .contact__title {
+        font-size: 1.5rem;
+        /* Reduce el tamaño del texto en pantallas pequeñas */
+    }
+
+    .formulario {
+        padding: 15px;
+        /* Reduce el padding en pantallas pequeñas */
+    }
+
+    .nombre-email input {
+        margin: 15px 0;
+        /* Reduce el margen para un mejor ajuste */
+    }
+}
