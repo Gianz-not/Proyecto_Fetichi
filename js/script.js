@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const productPrice = parseFloat(priceElement.textContent.replace(/\D/g, ''));
         const productImage = productCard.querySelector('.img__product img').src;
 
-
         const existingItem = cart.find(item => item.name === productName);
 
         if (existingItem) {
@@ -24,7 +23,6 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log("carrito actualizado:", cart)
     }
 
-
     productsContainer.addEventListener('click', function (event) {
         if (event.target.tagName === 'BUTTON') {
             const productCard = event.target.closest('.card');
@@ -34,7 +32,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     });
-
 
     // Crear el modal y añadirlo al body
     const modal = document.createElement('div');
@@ -113,12 +110,27 @@ document.addEventListener('DOMContentLoaded', function () {
     const checkoutButton = modal.querySelector('#checkout-button');
     checkoutButton.addEventListener('click', () => {
         if (cart.length > 0) {
-            alert('¡Gracias por tu compra!');
+            const cartTotalString = document.getElementById('cart-total').textContent;
+           const cartTotal = parseFloat(cartTotalString.replace("Total: $", ""));
+            const lastPurchase = {
+                items: cart,
+                 total: cartTotal
+             };
+             localStorage.setItem('lastPurchase', JSON.stringify(lastPurchase));
+            alert('¡Gracias por tu compra! Los productos y el precio han sido guardados.');
             cart = [];
             updateModalCartDisplay();
             modal.style.display = 'none';
         } else {
-           alert('No hay productos en el carrito.');
+            alert('No hay productos en el carrito.');
         }
     });
+
+    // Recuperar última compra del localStorage
+    const lastPurchaseData = localStorage.getItem('lastPurchase');
+    if (lastPurchaseData) {
+        const lastPurchase = JSON.parse(lastPurchaseData)
+        console.log('Última compra:', lastPurchase);
+        // Puedes mostrar la info en algun otro lado
+     }
 });
