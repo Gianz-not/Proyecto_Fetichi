@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const productsContainer = document.querySelector('.products__container');
+    const contactForm = document.getElementById('contact-form'); // Reemplaza 'contact-form' con el ID de tu formulario.
     let cart = [];
 
     function updateCartDisplay() {
@@ -11,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const priceElement = productCard.querySelector('.precio__card');
         const productPrice = parseFloat(priceElement.textContent.replace(/\D/g, ''));
         const productImage = productCard.querySelector('.img__product img').src;
+
 
         const existingItem = cart.find(item => item.name === productName);
 
@@ -28,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const productCard = event.target.closest('.card');
             if (productCard) {
                 addItemToCart(productCard);
-                alert('Producto añadido al carrito');
+               // alert('Producto añadido al carrito'); // Eliminamos el alert
             }
         }
     });
@@ -111,12 +113,12 @@ document.addEventListener('DOMContentLoaded', function () {
     checkoutButton.addEventListener('click', () => {
         if (cart.length > 0) {
             const cartTotalString = document.getElementById('cart-total').textContent;
-           const cartTotal = parseFloat(cartTotalString.replace("Total: $", ""));
+            const cartTotal = parseFloat(cartTotalString.replace("Total: $", ""));
             const lastPurchase = {
                 items: cart,
-                 total: cartTotal
-             };
-             localStorage.setItem('lastPurchase', JSON.stringify(lastPurchase));
+                total: cartTotal
+            };
+            localStorage.setItem('lastPurchase', JSON.stringify(lastPurchase));
             alert('¡Gracias por tu compra! Los productos y el precio han sido guardados.');
             cart = [];
             updateModalCartDisplay();
@@ -132,5 +134,53 @@ document.addEventListener('DOMContentLoaded', function () {
         const lastPurchase = JSON.parse(lastPurchaseData)
         console.log('Última compra:', lastPurchase);
         // Puedes mostrar la info en algun otro lado
-     }
+    }
+
+    //validando formulario con JavaScript 
+     contactForm.addEventListener('submit', function (event) {
+        event.preventDefault(); // Evita el envío por defecto del formulario.
+
+        const name = document.getElementById('name').value; // Reemplaza 'name' con el ID de tu campo de nombre.
+        const email = document.getElementById('email').value; // Reemplaza 'email' con el ID de tu campo de correo.
+        const message = document.getElementById('message').value; // Reemplaza 'message' con el ID de tu campo de mensaje.
+
+        let isValid = true;
+        let errorMessage = "";
+
+        if (name.trim() === "") {
+            isValid = false;
+            errorMessage += "Por favor, ingresa tu nombre.\n";
+        }
+
+        if (email.trim() === "") {
+            isValid = false;
+             errorMessage += "Por favor, ingresa tu correo electrónico.\n";
+        } else if (!isValidEmail(email)) {
+            isValid = false;
+             errorMessage += "Por favor, ingresa un correo electrónico válido.\n";
+        }
+
+        if (message.trim() === "") {
+            isValid = false;
+             errorMessage += "Por favor, ingresa tu mensaje.\n";
+        }
+
+        if (!isValid) {
+            alert(errorMessage);
+        }else{
+            contactForm.submit(); // Envía el formulario si es válido.
+            alert("¡Formulario enviado correctamente!");
+        }
+
+    });
+
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
 });
+////////////////////////////////////////////////////////////////////////////////////////
+
+    
+
